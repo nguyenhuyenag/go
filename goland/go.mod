@@ -1,1 +1,3 @@
-module go-core
+module goland
+
+go 1.26
