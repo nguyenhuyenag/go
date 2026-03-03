@@ -3,14 +3,14 @@ package main
 import "fmt"
 
 /*
-	Một số format phổ biến:
+Một số format phổ biến:
 
-		Ký hiệu		Ý nghĩa
-		%d			int
-		%f			float
-		%s			string
-		%v			mọi kiểu
-		%.2f		float 2 chữ số thập phân
+	Ký hiệu		Ý nghĩa
+	%d			int
+	%f			float
+	%s			string
+	%v			mọi kiểu
+	%.2f		float 2 chữ số thập phân
 */
 func printType() {
 	// Không xuống dòng
@@ -58,7 +58,7 @@ func stringType() {
 
 	// Chuỗi đa dòng
 	multiline := `This is a
-multiline string.`
+						multiline string.`
 	println(multiline)
 
 }
@@ -66,5 +66,4 @@ multiline string.`
 func main() {
 	printType()
 	// stringType()
-	// fmt.Println(string("Hello World"[1]))
 }
