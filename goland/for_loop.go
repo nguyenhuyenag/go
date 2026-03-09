@@ -48,10 +48,10 @@ func loop3() {
 }
 
 /*
-- For each:
+	- For each:
 
-- If you're looping over an array, slice, string, or map, or reading from a channel,
-a range clause can manage the loop.
+	- If you're looping over an arrays, slice, string, or map, or reading from a channel,
+	a range clause can manage the loop.
 */
 func forEach() {
 	arr := []int{6, 4, 3, 8, 5}
@@ -61,13 +61,13 @@ func forEach() {
 }
 
 func reverse() {
-	a := []int{1, 2, 3, 4, 5}
-	// Reverse a
-	fmt.Println(a)
-	for i, j := 0, len(a)-1; i < j; i, j = i+1, j-1 {
-		a[i], a[j] = a[j], a[i]
+	arr := []int{1, 2, 3, 4, 5}
+	// Reverse arr
+	fmt.Println(arr)
+	for i, j := 0, len(arr)-1; i < j; i, j = i+1, j-1 {
+		arr[i], arr[j] = arr[j], arr[i]
 	}
-	fmt.Println(a)
+	fmt.Println(arr)
 }
 
 func forArr() {
