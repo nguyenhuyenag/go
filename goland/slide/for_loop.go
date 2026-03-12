@@ -50,7 +50,7 @@ func loop3() {
 /*
 	- For each:
 
-	- If you're looping over an arrays, slice, string, or map, or reading from a channel,
+	- If you're looping over an slide, slice, string, or map, or reading from a channel,
 	a range clause can manage the loop.
 */
 func forEach() {
