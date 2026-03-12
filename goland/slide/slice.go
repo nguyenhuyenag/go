@@ -15,6 +15,48 @@ import (
 
 		*Lưu ý: Go dùng zero value nên nếu int mặc định sẽ là 0.
 
+	> Concat(): Nối nhiều slice lại thành một slice mới
+
+		a := []int{1, 2}
+		b := []int{3, 4}
+
+		r := slices.Concat(a, b)
+
+	> Contains(slide, v): Kiểm tra xem slide có chứa phần tử v hay không.
+	> ContainsFunc(): Kiểm tra xem slice có phần tử nào thỏa điều kiện hay không.
+
+		s := []int{1, 3, 5, 7}
+		found := slices.ContainsFunc(s, func(x int) bool {
+			return x % 2 == 0 // Kiểm tra xem có số chẵn nào hay không?
+		})
+
+	> Delete(s, start, end): Xóa một đoạn phần tử [start, end] trong slice theo index.
+	> Delete(s, i, i + 1): Xóa 1 phần tử ở vị trí i.
+	> DeleteFunc(): Xóa các phần tử thỏa điều kiện.
+
+		s := []int{1, 2, 3, 4, 5}
+		s = slices.DeleteFunc(s, func(x int) bool {
+			return x % 2 == 0 // Xóa các số chẵn
+		})
+
+	> Equal(): Kiểm tra 2 slides có bằng nhau hay không?
+	> EqualFunc():
+
+		s1 := []string{"Go", "Java"}
+		s2 := []string{"go", "JAVA"}
+
+		// So sánh không phân biệt hoa thường
+		equal := slices.EqualFunc(s1, s2, func(x, y string) bool {
+			return strings.EqualFold(x, y)
+		})
+
+		// So sánh các User theo ID
+		equal := slices.EqualFunc(s1, s2, func(x, y User) bool {
+			return x.ID == y.ID
+		})
+
+	> slices.Index(slice, v): Tìm index của v.
+
 	> s = Clip(s) -> Giảm capacity của slide xuống bằng đúng len(s)
 
 		s := make([]int, 3, 10)
