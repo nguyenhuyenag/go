@@ -22,7 +22,7 @@ import (
 
 		r := slices.Concat(a, b)
 
-	> Contains(slide, v): Kiểm tra xem slide có chứa phần tử v hay không.
+	> Contains(slice, v): Kiểm tra xem slice có chứa phần tử v hay không.
 	> ContainsFunc(): Kiểm tra xem slice có phần tử nào thỏa điều kiện hay không.
 
 		s := []int{1, 3, 5, 7}
@@ -73,7 +73,7 @@ import (
 
 		s[i], s[j] = s[j], s[i]
 
-	> s = Clip(s) -> Giảm capacity của slide xuống bằng đúng len(s)
+	> s = Clip(s) -> Giảm capacity của slice xuống bằng đúng len(s)
 
 		s := make([]int, 3, 10)
 		fmt.Println(len(s), cap(s)) // 3, 10

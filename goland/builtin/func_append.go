@@ -11,7 +11,7 @@ import "fmt"
 		Khi gọi append:
 		  - Nếu capacity còn đủ → Go chỉ thêm vào array hiện tại.
 		  - Nếu capacity không đủ → Go tạo array mới lớn hơn, copy dữ liệu sang.
-		  - Hàm sẽ trả về slide mới, không thay đổi slide ban đầu.
+		  - Hàm sẽ trả về slice mới, không thay đổi slice ban đầu.
 
 	- cap()
 
@@ -29,12 +29,12 @@ func main() {
 
 	fmt.Printf("len: %d, cap: %d\n", len(arr1), cap(arr1))
 
-	// Thêm phần tử vào slide
+	// Thêm phần tử vào slice
 	arr2 := append(arr1, 4, 5, 6)
 	fmt.Println("arr1:", arr1)
 	fmt.Println("arr2:", arr2)
 
-	// Nối 2 slide
+	// Nối 2 slice
 	arr3 := append(arr1, arr2...)
 	fmt.Println("arr3:", arr3)
 }
