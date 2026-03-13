@@ -55,7 +55,23 @@ import (
 			return x.ID == y.ID
 		})
 
-	> slices.Index(slice, v): Tìm index của v.
+	> Index(slice, v): Tìm index của v.
+	> IndexFunc(): Tìm index của phần tử thỏa điều kiện.
+
+		s := []int{1, 3, 5, 7}
+		index := slices.IndexFunc(s, func(x int) bool {
+			return x % 2 == 0 // Tìm index của số chẵn đầu tiên
+		})
+
+	> Insert(s, index, value): Insert by index.
+
+	> Repeat(s, n): Lặp lại slice n lần.
+
+	> Replace(s, i, j, v1, v2,...): Xóa đoạn [i, j) và thay bằng v1,v2,..
+
+	> Reverse(s): Đảo mảng
+
+		s[i], s[j] = s[j], s[i]
 
 	> s = Clip(s) -> Giảm capacity của slide xuống bằng đúng len(s)
 
@@ -63,11 +79,28 @@ import (
 		fmt.Println(len(s), cap(s)) // 3, 10
 		s = slices.Clip(s)
 		fmt.Println(len(s), cap(s)) // 3, 3
- */
+*/
 func main() {
-	s := make([]int, 5,	10)
-	fmt.Println(s)
+	//s := []int{4, 6, 2, 0, 34, 2, 9}
+	//fmt.Println("Contains:", slices.Index(s, 2))
+	// fmt.Println(s)
 	// Insert by index
-	s = slices.Insert(s, 1, 99)
-	fmt.Println(s)
+	//s = slices.Insert(s, 1, 99)
+	// fmt.Println(s)
+	a := []int{1, 2, 3}
+	slices.Reverse(a)
+	fmt.Println(a)
+	//
+	//b := slices.Repeat(a, 3)
+	//
+	//fmt.Println(b)
+	//words := []string{"Go", "Lang"}
+	//result := slices.Repeat(words, 2)
+	//fmt.Println(result)
+	//a := []int{0, 0, 0, 0, 0, 0, 0, 0, 0}
+	//b := slices.Replace(a, 1, 4, -1, -2, -3, -4)
+	//b1 := slices.Replace(a, 1, len(b), -1)
+	//
+	//fmt.Println(b)
+	//fmt.Println(b1)
 }
