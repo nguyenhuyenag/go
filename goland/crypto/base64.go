@@ -10,15 +10,15 @@ func main() {
 
 	bytes := []byte(s)
 
-	base64Encode := base64.StdEncoding.EncodeToString(bytes)
-	fmt.Println("Encode:", base64Encode)
+	encodeStr := base64.StdEncoding.EncodeToString(bytes)
+	fmt.Println("Encode:", encodeStr)
 
-	decodeString, err := base64.StdEncoding.DecodeString(base64Encode)
+	decodeBytes, err := base64.StdEncoding.DecodeString(encodeStr)
 	// nil nghĩa là -> Không có giá trị / không trỏ tới dữ liệu nào.
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
 	}
 
-	fmt.Println("Decode:", string(decodeString))
+	fmt.Println("Decode:", string(decodeBytes))
 }
