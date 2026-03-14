@@ -31,6 +31,14 @@ func JSONToObject() {
 	fmt.Println(p.Name, p.Age)
 }
 
+/*
+	Hàm							Chức năng
+	json.Marshal()				Struct → JSON
+	json.Unmarshal()			JSON → struct
+	json.MarshalIndent()		JSON đẹp
+	json.NewEncoder()			Ghi JSON vào stream
+	json.NewDecoder()			Đọc JSON từ stream
+*/
 func main() {
 	convertToJSON()
 	// JSONToObject()
