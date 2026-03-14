@@ -7,43 +7,14 @@ import (
 	"path/filepath"
 )
 
-// Current directory
-func currentDir() string {
+func main() {
 	dir, err := os.Getwd()
 	if err != nil {
 		panic(err)
 	}
 
 	fmt.Println("Current directory:", dir)
-	return dir
-}
 
-// Lấy thư mục của file đang chạy
-func fileExecutable() {
-	exe, err := os.Executable()
-	if err != nil {
-		panic(err)
-	}
-
-	dir := filepath.Dir(exe)
-	fmt.Println(dir)
-}
-
-// Lấy thư mục của source file
-func sourceDir() {
-	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(dir)
-}
-
-func main() {
-	// currentDir()
-	// fileExecutable()
-	// sourceDir()
-
-	dir := currentDir()
 	path := filepath.Join(dir, "file", "data.csv")
 	file, err := os.Open(path)
 
@@ -53,13 +24,15 @@ func main() {
 	defer file.Close()
 
 	reader := csv.NewReader(file)
-
 	records, err := reader.ReadAll()
 	if err != nil {
 		panic(err)
 	}
 
 	for _, row := range records {
-		fmt.Println(row)
+		// fmt.Println(len(row))
+		// fmt.Println(reflect.TypeOf(row), row)
+		fmt.Println(row[0], row[1], row[2])
 	}
+
 }
