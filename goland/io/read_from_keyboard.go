@@ -7,7 +7,7 @@ import (
 )
 
 /*
-- Đọc dữ liệu từ bàn phím.
+	- Đọc dữ liệu từ bàn phím.
 */
 func readLine() {
 	reader := bufio.NewReader(os.Stdin)
