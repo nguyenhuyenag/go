@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"reflect"
 )
 
 type Person struct {
@@ -16,7 +15,7 @@ func convertToJSON() {
 	p := Person{"Alice", 25}
 	// data, _ := json.Marshal(p)
 	data, _ := json.MarshalIndent(p, "", "  ")
-	fmt.Println(reflect.TypeOf(data))
+	// fmt.Println(reflect.TypeOf(data))
 	jsonData := string(data)
 	fmt.Println(jsonData)
 }
