@@ -19,7 +19,6 @@ func incr() {
 	- Mutex cho phép chỉ một goroutine truy cập vùng code tại một thời điểm.
  */
 func main() {
-
 	var wg sync.WaitGroup
 
 	for i := 0; i < 1000; i++ {

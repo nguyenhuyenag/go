@@ -12,7 +12,6 @@ func increment() {
 	- Khi nhiều goroutine cùng sửa một biến, kết quả có thể sai.
 */
 func main() {
-
 	for i := 0; i < 1000; i++ {
 		go increment()
 	}
