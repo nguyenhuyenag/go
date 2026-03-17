@@ -171,6 +171,13 @@ func replace() {
 	fmt.Println("ReplaceAll:", strings.ReplaceAll(date, "-", "/"))
 }
 
+func toValidUTF8() {
+	// Chuyển đổi chuỗi sang UTF-8 hợp lệ, thay thế các byte không hợp lệ bằng ký tự được chỉ định
+	s := "Hello\xffWorld"
+	result := strings.ToValidUTF8(s, "?")
+	fmt.Println(result)
+}
+
 func main() {
 	// trim()
 	// contains()
@@ -183,5 +190,6 @@ func main() {
 	// stringBuilder()
 	// stringsMap()
 	// repeat()
-	replace()
+	// replace()
+	toValidUTF8()
 }
