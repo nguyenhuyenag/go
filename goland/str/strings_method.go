@@ -178,6 +178,16 @@ func toValidUTF8() {
 	fmt.Println(result)
 }
 
+func x() {
+	r := strings.NewReplacer(
+		"Hello", "Hi",
+		"Go", "Golang",
+	)
+	input := "Hello Go! Hello everyone!"
+	output := r.Replace(input)
+	fmt.Println(output) // Hi Golang! Hi everyone!
+}
+
 func main() {
 	// trim()
 	// contains()
